@@ -3,6 +3,7 @@ FROM debian:bullseye-slim
 ARG DEBIAN_FRONTEND=noninteractive
 
 RUN apt-get update \
+      && apt-get -y upgrade \
       && apt-get install -y --no-install-recommends openssh-server \
       && rm -r /var/lib/apt/lists/*
 
